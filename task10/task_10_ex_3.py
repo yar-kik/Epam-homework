@@ -38,7 +38,7 @@ student = namedtuple("Student", ("name", "age", "mark"))
 def get_top_performers(file_path: str,
                        number_of_top_students: int = 5) -> list:
     """Receives file path and returns names of top performer students."""
-    with open(f"{file_path}", 'r', newline='') as file:
+    with open(file_path, 'r', newline='') as file:
         csv_reader = csv.reader(file, delimiter=",")
         headers = next(csv_reader)
         students = [student(*data) for data in csv_reader]
@@ -51,8 +51,8 @@ def get_top_performers(file_path: str,
 def write_students_age_desc(file_path: str, output_file_path: str) -> None:
     """receives the file path with students info and writes CSV student
     information to the new file in descending order of age."""
-    with open(f"{file_path}", 'r', newline='') as input_file, \
-            open(f"{output_file_path}", 'w', newline='') as output_file:
+    with open(file_path, 'r', newline='') as input_file, \
+            open(output_file_path, 'w', newline='') as output_file:
         csv_reader = csv.reader(input_file, delimiter=",")
         csv_writer = csv.writer(output_file, delimiter=",")
         csv_writer.writerow(next(csv_reader))
