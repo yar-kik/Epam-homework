@@ -15,7 +15,7 @@ from collections import Counter
 
 def most_common_words(file_path: str, top_words: int) -> list:
     """Returns most common words in the file."""
-    with open(f"{file_path}", 'r') as file:
+    with open(file_path, 'r') as file:
         raw_text = file.read()
     text = raw_text.lower()
     all_worlds = re.findall(r"\w+", text)
